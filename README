@@ -1,0 +1,26 @@
+Erlang AMQP Examples
+
+Summary
+This is a set of examples that use rebar for building. Source is only slightly
+modified to run with newer version of libraries.
+
+Setup
+Have rebar in your path.
+
+Compile
+
+  $ cd rabbitmq-erlang-client-examples
+  $ make
+
+Network Example
+This assumes rabbitmq is already running on your system
+
+  $ cd rabbitmq-erlang-client-examples
+  $ make run
+
+
+Direct Example
+Not implemented.
+
+References
+1. https://github.com/careo/rabbitmq-erlang-client-examples
