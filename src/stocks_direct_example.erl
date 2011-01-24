@@ -1,6 +1,6 @@
 -module(stocks_direct_example).
 
--include("../deps/rabbitmq-erlang-client/include/amqp_client.hrl").
+-include_lib("amqp_client/include/amqp_client.hrl").
 
 -export([start/0]).
 
@@ -11,10 +11,10 @@ amqp_lifecycle() ->
 
     %% Start a *direct* connection to the server
     %% This is the ONLY line of code that is different from 'stocks_example.erl'
-    Connection = amqp_connection:start_direct(),
+    {ok,Connection} = amqp_connection:start_direct(),
 
     %% Once you have a connection to the server, you can start an AMQP channel
-    Channel = amqp_connection:open_channel(Connection),
+    {ok,Channel} = amqp_connection:open_channel(Connection),
 
     %% Now that you have access to a connection with the server, you can declare a queue and bind it to an exchange
     X = <<"stocks">>,
